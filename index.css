@@ -1,13 +1,26 @@
 .container {
-	width: 800px;
+	width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 50px;
 	margin-bottom: 50px;
+	position: relative;
 }
 
 .hardware {
 	position: relative;
+}
+
+.instructions {
+	position: absolute;
+	top: 0px;
+	left: 650px;
+}
+
+.instruction_list {
+    font-size: 18px;
+    font-family: monospace;
+}
 }
 
 .memory_col {
@@ -94,4 +107,16 @@
     background: white;
     padding: 5px;
     border-radius: 3px;
+}
+
+.pc_number_text {
+	color: red;
+}
+
+.register_number_text {
+	color: blue;
+}
+
+.cell_number_text {
+	color: gray;
 }

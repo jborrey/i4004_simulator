@@ -52,7 +52,7 @@ var decrement_r0 = function() {
 }
 
 var decrement_r1 = function() {
-    decrement_register(0);
+    decrement_register(1);
 	return next_pc();
 }
 
@@ -68,14 +68,12 @@ var r0_eq_r0_minus_r1 = function() {
 
 var input_to_r0 = function() {
 	setRegister(0, cellValue(pc + 1));
-	next_pc();
-	return next_pc();
+	return next_next_pc();
 }
 
 var input_to_r1 = function() {
-	setRegister(0, cellValue(next_pc()));
-	pc = next_pc();
-	return next_pc();
+	setRegister(1, cellValue(next_pc()));
+	return next_next_pc();
 }
 
 var print_r0 = function() {
@@ -84,11 +82,16 @@ var print_r0 = function() {
 }
 
 var jump_to_if_r0_is_not_zero = function() {
-	return registerValue(0) != 0 ? next_pc() : cellValue(next_pc());
+	return registerValue(0) != 0 ?  cellValue(next_pc()) : next_next_pc();
 }
 
 var jump_to_if_r0_is_zero = function() {
-	return registerValue(0) == 0 ? next_pc() : cellValue(next_pc());
+	return registerValue(0) == 0 ?  cellValue(next_pc()) : next_next_pc();
+}
+
+function next_next_pc() {
+	pc = next_pc();
+	return next_pc();
 }
 
 // 0 - Halt
@@ -168,7 +171,7 @@ function cellFromNum(cell_num) {
 }
 
 function cellValue(cell_num) {
-	return parseInt(cellFromNum(cell_num));
+	return parseInt(cellFromNum(cell_num).innerText);
 }
 
 function executeStep() {
