@@ -1,0 +1,133 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css">
+    <script src='index.js'></script>
+  </head>
+
+  <body>
+    <div class='container'>
+      <h1>4004 Simulator</h1>
+
+      <div class='hardware'>
+	      <div class='memory_col'>
+	        <table class='memory_table' border='1'>
+	          <tr>
+	            <td class='cell memory_cell'>
+	              <div class='cell_element memory_cell_number'>0</div>
+	              <div id='cell_0' class='cell_element cell_value memory_cell_value' contenteditable="true">0</div>
+	            </td>
+	            <td class='cell memory_cell'>
+	              <div class='cell_element memory_cell_number'>1</div>
+	              <div id='cell_1' class='cell_element cell_value memory_cell_value' contenteditable="true">0</div>
+	            </td>
+	            <td class='cell memory_cell'>
+	              <div class='cell_element memory_cell_number'>2</div>
+	              <div id='cell_2' class='cell_element cell_value memory_cell_value' contenteditable="true">0</div>
+	            </td>
+	            <td class='cell memory_cell'>
+	              <div class='cell_element memory_cell_number'>3</div>
+	              <div id='cell_3' class='cell_element cell_value memory_cell_value' contenteditable="true">0</div>
+	            </td>
+	          </tr>
+	          <tr>
+	            <td class='cell memory_cell'>
+	              <div class='cell_element memory_cell_number'>4</div>
+	              <div id='cell_4' class='cell_element cell_value memory_cell_value' contenteditable="true">0</div>
+	            </td>
+	            <td class='cell memory_cell'>
+	              <div class='cell_element memory_cell_number'>5</div>
+	              <div id='cell_5' class='cell_element cell_value memory_cell_value' contenteditable="true">0</div>
+	            </td>
+	            <td class='cell memory_cell'>
+	              <div class='cell_element memory_cell_number'>6</div>
+	              <div id='cell_6' class='cell_element cell_value memory_cell_value' contenteditable="true">0</div>
+	            </td>
+	            <td class='cell memory_cell'>
+	              <div class='cell_element memory_cell_number'>7</div>
+	              <div id='cell_7' class='cell_element cell_value memory_cell_value' contenteditable="true">0</div>
+	            </td>
+	          </tr>
+	          <tr>
+	            <td class='cell memory_cell'>
+	              <div class='cell_element memory_cell_number'>8</div>
+	              <div id='cell_8' class='cell_element cell_value memory_cell_value' contenteditable="true">0</div>
+	            </td>
+	            <td class='cell memory_cell'>
+	              <div class='cell_element memory_cell_number'>9</div>
+	              <div id='cell_9' class='cell_element cell_value memory_cell_value' contenteditable="true">0</div>
+	            </td>
+	            <td class='cell memory_cell'>
+	              <div class='cell_element memory_cell_number'>10</div>
+	              <div id='cell_10' class='cell_element cell_value memory_cell_value' contenteditable="true">0</div>
+	            </td>
+	            <td class='cell memory_cell'>
+	              <div class='cell_element memory_cell_number'>11</div>
+	              <div id='cell_11' class='cell_element cell_value memory_cell_value' contenteditable="true">0</div>
+	            </td>
+	          </tr>
+	          <tr>
+	            <td class='cell memory_cell'>
+	              <div class='cell_element memory_cell_number'>12</div>
+	              <div id='cell_12' class='cell_element cell_value memory_cell_value' contenteditable="true">0</div>
+	            </td>
+	            <td class='cell memory_cell'>
+	              <div class='cell_element memory_cell_number'>13</div>
+	              <div id='cell_13' class='cell_element cell_value memory_cell_value' contenteditable="true">0</div>
+	            </td>
+	            <td class='cell memory_cell'>
+	              <div class='cell_element memory_cell_number'>14</div>
+	              <div id='cell_14' class='cell_element cell_value memory_cell_value' contenteditable="true">0</div>
+	            </td>
+	            <td class='cell memory_cell'>
+	              <div class='cell_element memory_cell_number'>15</div>
+	              <div id='cell_15' class='cell_element cell_value memory_cell_value' contenteditable="true">0</div>
+	            </td>
+	          </tr>
+	        </table>
+	      </div>
+
+	      <div class='register_col'>
+	        <table class='memory_table' border='1'>
+	          <tr>
+	            <td class='cell register_cell'>
+	              <div class='cell_element memory_cell_number'>PC</div>
+	              <div id='cell_pc' class='cell_element cell_value register_cell_value' contenteditable="true">0</div>
+	            </td>
+	          <tr>
+	          <tr>
+	            <td class='cell register_cell'>
+	              <div class='cell_element memory_cell_number'>R0</div>
+	              <div id='cell_r0' class='cell_element cell_value register_cell_value' contenteditable="true">0</div>
+	            </td>
+	          <tr>
+	          <tr>
+	            <td class='cell register_cell'>
+	              <div class='cell_element memory_cell_number'>R1</div>
+	              <div id='cell_r1' class='cell_element cell_value register_cell_value' contenteditable="true">0</div>
+	            </td>
+	          <tr>
+	          <tr>
+	            <td class='cell register_cell'>
+	              <div id='cell_output_num' class='cell_element memory_cell_number'>Out</div>
+	              <div id='cell_output' class='cell_element cell_value register_cell_value' contenteditable="true">0</div>
+	            </td>
+	          <tr>
+	        </table>
+	      </div>
+
+	      <div class='memory_dump'>
+	        <span><b>Program:</b></span>
+	        <span id='memory_dump_field' contenteditable="true">0</span>
+	      </div>
+      
+      	  <div class='buttons_row'>
+	        <button id='step_button' class='processor_button'>Step</button>
+	        <button id='run_button' class='processor_button'>Run</button>
+	        <button id='stop_button' class='processor_button'>Stop</button>
+	        <button id='reset_button' class='processor_button'>Reset</button>
+	        <button id='clear_button' class='processor_button'>Clear</button>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
