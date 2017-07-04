@@ -1,0 +1,122 @@
+.container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	position: relative;
+}
+
+.hardware {
+	position: relative;
+}
+
+.instructions {
+	position: absolute;
+	top: 0px;
+	left: 650px;
+}
+
+.instruction_list {
+    font-size: 18px;
+    font-family: monospace;
+}
+}
+
+.memory_col {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 700px
+}
+
+.register_col {
+	position: absolute;
+	top: 0px;
+	left: 500px;
+	width: 100px;
+}
+
+.memory_dump {
+	position: absolute;
+	top: 510px;
+	left: 0px;
+}
+
+.buttons_row {
+	position: absolute;
+	top: 555px;
+	left: 0px;
+}
+
+.memory_table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-family: monospace;
+}
+
+.cell {
+    padding: 60px;
+    position: relative;
+    text-align: center;
+}
+
+.cell_element {
+	position: absolute;
+}
+
+.memory_cell_number {
+	top: 0px;
+	left: 0px;
+	font-size: 20px;
+    border: 1px solid;
+    margin: -1;
+    width: 25px;
+    height: 25px;
+}
+
+.cell_value {
+	font-size: 40px;
+	top: 22px;
+	left: 22px;
+	height: 75px;
+	width: 75px;
+	line-height: 75px;
+}
+
+#cell_output_num {
+	width: 38px;
+}
+
+.processor_button {
+    font-size: 27px;
+    font-family: monospace;
+    width: 100px;
+    height: 70px;
+    margin: 10px;
+    background: white;
+    border-radius: 10px;
+}
+
+#memory_dump_field {
+	display: inline-block;
+    width: 508px;
+	font-family: monospace;
+    font-size: 18px;
+    border: 0.5px solid;
+    background: white;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.pc_number_text {
+	color: red;
+}
+
+.register_number_text {
+	color: blue;
+}
+
+.cell_number_text {
+	color: gray;
+}
