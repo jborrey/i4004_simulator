@@ -120,3 +120,7 @@
 .cell_number_text {
 	color: gray;
 }
+
+.program_link {
+	margin-left: 10px;
+}

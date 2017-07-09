@@ -157,9 +157,25 @@ function syncCellsToProgram() {
     setProgramField(program.join());
 }
 
+function syncCellsToLink() {
+	var memoryCells = cellsArray();
+    var program = programArray(memoryCells)
+    setProgramLink(program);
+}
+
+function setProgramLink(program) {
+	var link = window.location.origin + '/' + window.location.pathname + '?program=' + program;
+	document.getElementById('program_link').setAttribute('href', link);
+}
+
 function syncProgramToCells() {
 	var programArrayChars = document.getElementById('memory_dump_field').innerText.split(',');
     cellsArray().forEach( function(cell, index) { cell.innerText = programArrayChars[index] });
+}
+
+function syncProgramToLink() {
+	var program = document.getElementById('memory_dump_field').innerText
+    setProgramLink(program);
 }
 
 function syncPc() {
@@ -221,12 +237,14 @@ function setBindings() {
         cell.addEventListener('DOMSubtreeModified', function(){ 
         	if (!no_update_cells && document.activeElement != document.getElementById('memory_dump_field')){
         		syncCellsToProgram();
+        		syncCellsToLink();
         	}
         });
 	});
 	document.getElementById('memory_dump_field').addEventListener('DOMSubtreeModified', function() {
 		if (!document.activeElement.classList.contains('cell_value')){
         		syncProgramToCells();
+        		syncProgramToLink();
     	}
     });
 
@@ -239,8 +257,33 @@ function setBindings() {
     document.getElementById('clear_button').onclick = function() { executeClear() };
 }
 
+function urlParams() {
+	var params = {};
+
+    var paramsString = window.location.search.substr(1);
+	var keyValuePairs = paramsString.split('&');
+	keyValuePairs.map(function(pair) { params[pair.split('=')[0]] = pair.split('=')[1] });
+
+	return params;
+}
+
+function programParam() {
+	return urlParams()['program'];
+}
+
+function programParamGiven() {
+	return programParam() != null;
+}
+
 window.onload = function start() {
 	console.log('Starting 4004 processor ...');
 	initalize();
+
+    // if there was a program given as a param, load it up
+    if (programParamGiven()) {
+    	setProgramField(programParam());
+    	syncProgramToCells();
+    }
+
 	setBindings();
 }
